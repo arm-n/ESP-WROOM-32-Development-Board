@@ -1,9 +1,9 @@
 
 # ESP-WROOM-32 KiCad Prototype
 
-A PCB design project based on the ESP-WROOM-32 module, developed using KiCad. This repository contains the circuit schematic, PCB layout, Gerber manufacturing files, design screenshots, datasheets and supporting documentation.
+A hardware prototyping project based on the ESP-WROOM-32 module, designed using KiCad. This repository contains the circuit schematic, PCB layout, Gerber manufacturing files, design screenshots, datasheets and supporting documentation.
 
-The project was developed as a hardware prototyping and learning exercise, using technical datasheets and educational references.
+The project was developed as a learning and hardware prototyping exercise, using technical documentation and component datasheets as references.
 
 ## Project Overview
 
@@ -14,22 +14,22 @@ The project was developed as a hardware prototyping and learning exercise, using
 | Design Software | KiCad |
 | Project Type | Hardware / PCB Design |
 | Design Stage | Prototype |
-| Repository | ESP-WROOM-32 KiCad Prototype |
-| Hardware Licence | CERN-OHL-P-2.0 |
+| Repository | ESP-WROOM-32-Development-Board |
+| Author | Armaan |
 
 ## Repository Structure
 
 ```text
 esp-wroom-32/
 │
-├── esp_wroom_32.kicad_pro
-├── esp_wroom_32.kicad_sch
-├── esp_wroom_32.kicad_pcb
+├── esp_wroom_32.kicad_pro       # KiCad project settings
+├── esp_wroom_32.kicad_sch       # Circuit schematic
+├── esp_wroom_32.kicad_pcb       # PCB layout
 │
-├── ESP-WROOM-32.PDF
-├── DRC.rpt
+├── ESP-WROOM-32.PDF             # ESP-WROOM-32 datasheet
+├── DRC.rpt                      # Design rule check report
 │
-├── gerber/
+├── gerber/                      # PCB manufacturing files
 │   ├── esp_wroom_32-B_Cu.gbr
 │   ├── esp_wroom_32-F_Cu.gbr
 │   ├── esp_wroom_32-B_Mask.gbr
@@ -43,61 +43,80 @@ esp-wroom-32/
 │   ├── esp_wroom_32-PTH.drl
 │   └── esp_wroom_32-job.gbrjob
 │
-├── images/
+├── images/                      # Design screenshots
 │   └── *.png
 │
-├── README.md
-└── LICENSE
+├── README.md                    # Project documentation
+└── LICENSE                      # Licence, if applicable
 ```
 
 ## Hardware Design
 
-The project is based on the ESP-WROOM-32 module, which incorporates Wi-Fi and Bluetooth connectivity.
+This project uses the ESP-WROOM-32 module, which provides integrated Wi-Fi and Bluetooth connectivity.
 
-The KiCad project includes:
+The KiCad project includes the following design files and documentation:
 
-- **Schematic:** Circuit design and electrical connections.
-- **PCB layout:** Component placement, copper routing and board design.
-- **Gerber files:** PCB fabrication outputs.
-- **DRC report:** Design rule check results.
-- **Datasheet:** Technical reference for the ESP-WROOM-32 module.
-- **Images:** Screenshots documenting the design process.
+- **Schematic:** Circuit diagram and electrical connections.
+- **PCB Layout:** Component placement, copper routing and board layout.
+- **Gerber Files:** PCB fabrication outputs.
+- **DRC Report:** Design rule check results from the saved design.
+- **Datasheet:** Technical specifications and reference information for the ESP-WROOM-32 module.
+- **Design Images:** Screenshots documenting the schematic, PCB and design process.
 
-Refer to the schematic and PCB files for the actual circuit implementation and board layout.
+Refer to the KiCad schematic and PCB files for the actual circuit implementation and board layout.
 
 ## Tools and Software
 
-- [KiCad](https://www.kicad.org/) — Schematic capture and PCB design.
+The following tools and resources are used in this project:
+
+- [KiCad](https://www.kicad.org/) — Electronic schematic capture and PCB design.
 - [Git](https://git-scm.com/) — Version control.
-- [GitHub](https://github.com/) — Source and hardware design hosting.
+- [GitHub](https://github.com/) — Project hosting and version management.
+- [Espressif Documentation](https://www.espressif.com/) — Technical documentation and component specifications.
 
 ## Getting Started
 
 ### 1. Clone the Repository
 
+Clone the project from GitHub using:
+
 ```bash
 git clone https://github.com/arm-n/ESP-WROOM-32-Development-Board.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd ESP-WROOM-32-Development-Board
 ```
 
 ### 2. Open the KiCad Project
 
 1. Install and launch KiCad.
-2. Open the project manager.
+2. Open the KiCad Project Manager.
 3. Select **File → Open Project**.
 4. Navigate to the cloned repository.
 5. Open `esp_wroom_32.kicad_pro`.
 
 ### 3. Explore the Design
 
-Open the schematic editor to inspect the circuit and electrical connections.
+**Schematic**
 
-Open the PCB editor to examine component placement, copper routing, board outline and design rules.
+Open the schematic editor to inspect the circuit diagram, components and electrical connections.
 
-The included `DRC.rpt` provides a record of the design rule check at the time it was generated. Run a fresh DRC check after making modifications.
+**PCB Layout**
+
+Open the PCB editor to examine component placement, copper routing, board outline and PCB design.
+
+**Design Rule Check**
+
+The repository includes a `DRC.rpt` file containing the design rule check results from the time it was generated.
+
+Run a fresh Design Rule Check (DRC) in KiCad before modifying, fabricating or using the PCB.
 
 ## PCB Manufacturing Files
 
-The `gerber/` directory contains the PCB fabrication outputs.
+The `gerber/` directory contains the PCB fabrication files generated from the KiCad PCB layout.
 
 | File | Description |
 |---|---|
@@ -114,42 +133,65 @@ The `gerber/` directory contains the PCB fabrication outputs.
 | `NPTH.drl` | Non-plated through-hole drill file |
 | `job.gbrjob` | Gerber job configuration |
 
-**Manufacturing note:** Verify the schematic, PCB layout, DRC results, Gerber layers, drill files and board dimensions before ordering a PCB. Ensure that the manufacturing files correspond to the latest PCB revision.
+### Manufacturing Considerations
 
-## Design References and Acknowledgements
+Before submitting the PCB for fabrication:
 
-This project was developed with the help of educational resources, technical documentation and component datasheets.
+1. Verify the schematic and PCB layout.
+2. Run the latest Electrical Rules Check (ERC) and Design Rules Check (DRC).
+3. Inspect component footprints, placement and routing.
+4. Verify the board outline and dimensions.
+5. Inspect the Gerber files using a Gerber viewer.
+6. Confirm that the drill files and fabrication outputs correspond to the latest PCB revision.
+7. Check the fabrication requirements of the selected PCB manufacturer.
+
+**Note:** The included manufacturing files represent a saved design revision. Verify them before ordering a PCB, as they may not reflect subsequent design changes.
+
+## Design References
+
+This project was developed using publicly available technical documentation and component datasheets for learning and design reference.
 
 ### Datasheets
 
 - [ESP-WROOM-32 Datasheet — Espressif](https://documentation.espressif.com/esp32-wroom-32_datasheet_en.pdf)
 - [ESP32 Datasheet — Espressif](https://documentation.espressif.com/esp32_datasheet_en.pdf)
 
+These documents provide technical specifications, electrical characteristics, pin information and other reference material relevant to the ESP32 platform.
+
+Third-party documentation, designs, images and other materials retain their respective copyrights and licences.
 
 ## Design Status
 
 **Current Status: Prototype**
 
-This repository contains the KiCad project files, PCB fabrication outputs, datasheet, DRC report and design screenshots.
+The repository contains the KiCad project files, schematic, PCB layout, Gerber manufacturing outputs, DRC report, datasheet and design screenshots.
 
-The design should be reviewed and validated before fabrication or use in a production application.
+The project is intended for educational purposes, hardware experimentation and PCB design practice.
+
+Further review and validation are required before fabrication or use in a production application.
 
 ## Licence
 
-The original hardware design contributions in this repository are intended to be licensed under the **CERN Open Hardware Licence Version 2 — Permissive (CERN-OHL-P-2.0)**.
+The licensing of this project is subject to the ownership and permissions applicable to its individual design contributions and included third-party materials.
 
-See the [LICENSE](LICENSE) file for the complete licence terms.
+The **CERN Open Hardware Licence Version 2 — Permissive (CERN-OHL-P-2.0)** is a potential licence for original hardware design contributions, provided the contributor has the necessary rights to distribute them under its terms.
 
-The licence applies only to material that the project contributor has the right to license. Third-party materials, including any incorporated reference designs, symbols, footprints, images or documentation, retain their respective copyrights and licensing terms.
+Third-party materials, including any incorporated reference designs, schematics, PCB layouts, symbols, footprints, images and documentation, remain subject to their respective copyrights and licences.
 
-Attribution does not replace permission where permission is required.
+Attribution alone does not grant permission to redistribute or relicense third-party material.
+
+Refer to the `LICENSE` file, if included, for the applicable licence terms.
 
 ## Author
 
 **Armaan**
 
-Hardware design and KiCad prototyping.
+Hardware prototyping, KiCad schematic design and PCB development.
 
 ## Disclaimer
 
-This repository is shared for educational, development and hardware prototyping purposes. Users should independently verify the design, component specifications, electrical safety and manufacturing outputs before building or using the hardware.
+This project is provided for educational, experimental and hardware prototyping purposes.
+
+The design and associated manufacturing files are provided without a guarantee of fitness for a particular purpose.
+
+Users should independently verify the circuit, component specifications, electrical characteristics, PCB layout, manufacturing outputs and safety requirements before fabrication or use.

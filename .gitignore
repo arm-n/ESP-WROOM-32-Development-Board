@@ -1,0 +1,12 @@
+# KiCad local preferences
+*.kicad_prl
+
+# KiCad project lock files
+*.lck
+
+# macOS
+.DS_Store
+
+# Temporary files
+*.bak
+*.tmp

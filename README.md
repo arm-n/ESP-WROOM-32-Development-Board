@@ -76,7 +76,7 @@ Refer to the schematic and PCB files for the actual circuit implementation and b
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/arm-n/esp-wroom-32-kicad.git
+git clone https://github.com/arm-n/ESP-WROOM-32-Development-Board.git
 ```
 
 ### 2. Open the KiCad Project
